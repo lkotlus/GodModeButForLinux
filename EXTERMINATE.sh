@@ -1,29 +1,34 @@
 #!/bin/bash
 
-#Let's set some password requirements!
+#It is time to EXTERMINATE
 
-#Polishing our CLI.
+#polishing our CLI a little bit.
 
 echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*'
-echo '|                               |'
-echo '*                               *'
-echo '|      Welcome to passReq!      |'
-echo '*      Press y to continue      *'
-echo '|      Press n to cancel        |'
-echo '*                               *'
+cat badUsers.txt
 echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*'
-echo
 
-#Checking that our user wants to proceed.
+#checking that our user wants to proceed.
 
+echo 'are these the users you would like to EXTERMINATE?'
 read -p 'y/n: ' RESP
 if [ $RESP == 'y' ]
 then
         echo
-        echo "Then let's get to setting some password requirements!"
+        echo "then let's get to EXTERMINATING"
 else
-        echo 'See you later!'
+        echo 'then eddit the badUsers.txt file.'
         exit 1
 fi
 
-sed -i 's/PASS_MAX_DAYS 99999/PASS_MAX_DAYS     7/g' testfile.txt
+#creating an array (list if you are a python plebian) from our txt file.
+
+IFS=$'\n' read -d '' -r -a lines < /home/kali/badUsers.txt
+
+#looping through our array.
+
+for i in ${lines[@]}
+do
+        echo EXTERMINATING user: $i
+        sudo deluser --quiet $i
+done
