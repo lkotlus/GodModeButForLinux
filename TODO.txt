@@ -1,0 +1,8 @@
+This is a todo list for this project. If you are not interested stop reading. If you are keep reading. Items are listed from most important to least important.
+Delete all media files.
+Set up a firewall, automatically close ports.
+Set up Nessus automatically.
+Automatically change user permitions.
+Uninstall redundant and bad applications (wireshark, Nmap, etc).
+Automatically go through and delete bad services.
+Automatically set up MalwareBytes.
