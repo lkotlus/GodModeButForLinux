@@ -17,7 +17,7 @@ then
         echo
         echo "then let's get to EXTERMINATING"
 else
-        echo 'then eddit the badUsers.txt file.'
+        echo 'then edit the badUsers.txt file.'
         exit 1
 fi
 
