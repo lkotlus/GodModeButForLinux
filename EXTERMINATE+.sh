@@ -19,27 +19,9 @@ cat users2.txt > users.txt
 sed -i '/^$/d' users.txt
 sed -i '/^$/d' users2.txt
 
-#Making an array for authorized users and an array for users on the system.
-IFS=$'\n' read -d '' -r -a users < users.txt
-IFS=$'\n' read -d '' -r -a authUsers < goodUsers.txt
+#Comparing users.txt to goodUsers.txt
+comm -2 -3 users.txt goodUsers.txt > badUsers.txt
+#Making a badUsers array out of badUsers.txt
+IFS=$'\n' read -d '' -r -a badUsers < badUsers.txt
 
-goodUsers=()
-badUsers=()
-
-for x in ${users[@]}
-do 
-    for y in ${authUsers[@]}
-    do 
-        if [[ $x == $y ]]
-        then
-            goodUsers+=$x
-            echo $x
-        elif [[ $x != $y ]]
-        then 
-            echo $x
-        fi
-    done
-done
-
-echo $goodUsers
 echo $badUsers
