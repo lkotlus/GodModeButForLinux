@@ -1,8 +1,2 @@
 # EXTERMINATE
-A bash script that deletes users that you list in a file.
-Download the badUsers.txt file and list the users you wish to EXTERMINATE.
-Your badUsers.txt file should look like this:
-user1
-user2
-user3
-user4
+To use EXTERMINATE just put all the users you want on your system into a file labeled goodUsers.txt, then make a file called users.txt, users2.txt, and badUsers.txt. If needed change the names of the files used in the script.
