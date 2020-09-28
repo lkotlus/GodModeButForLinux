@@ -20,7 +20,7 @@ sed -i '/^$/d' users.txt
 sed -i '/^$/d' users2.txt
 
 #Comparing users.txt to goodUsers.txt
-comm -2 -3 users.txt goodUsers.txt > badUsers.txt#!/bin/bash
+comm -2 -3 users.txt goodUsers.txt > badUsers.txt
 
 #Checking if the user is coming back after editing the badUsers.txt file
 echo '*_____________________________________*'
@@ -33,14 +33,15 @@ if [ $RESP == 'y' ]
 then
     echo
     echo "Then let's get to EXTERMINATING"
-    
-    echo '*________________*'
-    echo ' IGNORE THIS TEXT'
-    sudo sort users.txt
-    sudo sort goodUsers.txt
-    echo '*________________*'
+
+    sudo sort users.txt > users2.txt
+    sudo sort goodUsers.txt > goodUsers2.txt
+
+    cat users2.txt > users.txt
+    cat goodUsers2.txt > goodUsers.txt
+
     sudo comm -2 -3 --nocheck-order users.txt goodUsers.txt > badUsers.txt
-    echo 
+    echo
 
     IFS=$'\n' read -d '' -r -a badUsers < badUsers.txt
 
@@ -129,13 +130,15 @@ sed -i '/^$/d' users.txt
 sed -i '/^$/d' users2.txt
 
 #Comparing users.txt to goodUsers.txt and sorting both files (sorting the files is required to use comm)
-echo '*________________*'
-echo ' IGNORE THIS TEXT'
-sudo sort users.txt
-sudo sort goodUsers.txt
-echo '*________________*'
+sudo sort users.txt > users2.txt
+sudo sort goodUsers.txt > goodUsers2.txt
+
+cat users2.txt > users.txt
+cat goodUsers2.txt > goodUsers.txt
+
 sudo comm -2 -3 --nocheck-order users.txt goodUsers.txt > badUsers.txt
 echo 
+
 #Making a badUsers array out of badUsers.txt
 IFS=$'\n' read -d '' -r -a badUsers < badUsers.txt
 
