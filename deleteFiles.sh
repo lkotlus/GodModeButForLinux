@@ -21,10 +21,10 @@ then
 
 	IFS=$'\n' read -d '' -r -a lines < /home/ballen/foundFiles.txt
 
-	for i in ${lines[@]} 
+	for i in "${lines[@]}"
 	do
-		echo Deleting file $i
-		sudo rm '$i'
+		echo "Deleting file ${i}"
+		sudo rm "${i}"
 	done
 
 	exit 1
