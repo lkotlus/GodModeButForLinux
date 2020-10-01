@@ -1,4 +1,4 @@
-#!bin/bash
+#!/bin/bash
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/EXTERMINATE.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/deleteFiles.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passReq.sh
