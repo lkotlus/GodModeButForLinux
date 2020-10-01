@@ -1,6 +1,19 @@
 #!/bin/bash
 
-#getting rid of empty lines
+#Checking if we need to set up our files
+echo 'Is this your first time running EXTERMINATE on the system? (y/n)'
+read -p 'y/n: ' RESP
+if [ $RESP == 'y' ]
+then
+    sudo touch users.txt
+    sudo touch users2.txt
+    sudo touch goodUsers.txt
+    sudo touch goodUsers2.txt
+    sudo touch badUsers.txt
+else
+    'Moving on'
+fi
+#Getting rid of empty lines
 sed -i '/^$/d' users.txt
 sed -i '/^$/d' users2.txt
 
