@@ -10,6 +10,8 @@ then
     sudo touch goodUsers.txt
     sudo touch goodUsers2.txt
     sudo touch badUsers.txt
+    echo 'Run this command again after adding your whitelist to goodUsers.txt'
+    exit 1
 else
     'Moving on'
 fi
