@@ -2,6 +2,9 @@ echo 'Would you like to set up EXTERMINATE, deleteFiles, and passReq? (y/n)'
 read -p 'y/n: ' RESP
 if [ $RESP == 'y' ]
 then
+    sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/EXTERMINATE.sh
+    sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/deleteFiles.sh
+    sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passReq.sh
     sudo touch users.txt
     sudo touch users2.txt
     sudo touch goodUsers.txt
