@@ -19,7 +19,7 @@ then
 	echo "Then let's skip the pleasantries"
 	echo
 
-	IFS=$'\n' read -d '' -r -a lines < /home/ballen/foundFiles.txt
+	IFS=$'\n' read -d '' -r -a lines < foundFiles.txt
 
 	for i in "${lines[@]}"
 	do
@@ -60,7 +60,7 @@ if [ $RESP == 'y' ]
 then
 	echo
 	echo 'Searching for files'
-    sudo find / -iname '*.mp3' > /home/ballen/foundFiles.txt
+    sudo find / -iname '*.mp3' > foundFiles.txt
     echo 'Found files'
 else
 	echo 'Moving on'
@@ -74,7 +74,7 @@ if [ $RESP == 'y' ]
 then
 	echo
 	echo 'Searching for files'
-    sudo find / -iname '*.mp4' >> /home/ballen/foundFiles.txt
+    sudo find / -iname '*.mp4' >> foundFiles.txt
     echo 'Found files'
 else
 	echo 'Moving on'
@@ -88,8 +88,8 @@ if [ $RESP == 'y' ]
 then
 	echo
 	echo 'Searching for files'
-    sudo find / -iname 'passwords.txt' >> /home/ballen/foundFiles.txt
-    sudo find / -iname 'password.txt' >> /home/ballen/foundFiles.txt
+    sudo find / -iname 'passwords.txt' >> foundFiles.txt
+    sudo find / -iname 'password.txt' >> foundFiles.txt
     echo 'Found files'
 else
 	echo 'Moving on'
@@ -97,7 +97,7 @@ fi
 
 echo 
 
-cat /home/ballen/foundFiles.txt
+cat foundFiles.txt
 
 echo
 
@@ -123,12 +123,7 @@ fi
 
 echo 
 
-#awk '{ print "\""$0"\""}' foundFiles.txt > foundFiles2.txt
-#cat foundFiles2.txt > foundFiles.txt
-
-IFS=$'\n' read -d '' -r -a lines < /home/ballen/foundFiles.txt
-
-#echo ${lines[4]}
+IFS=$'\n' read -d '' -r -a lines < foundFiles.txt
 
 for i in "${lines[@]}"
 do
