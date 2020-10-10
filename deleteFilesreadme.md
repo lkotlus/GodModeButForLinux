@@ -1,2 +1,3 @@
 # deleteFiles
-Just make a file named foundFiles.txt. Make sure you change the path to the file in the script.
+
+If you don't need customization, just run the script. If you want to delete more filetypes just add them. To run with custom filetypes run it like this: ./deleteFiles.sh .filetype1 .filetype2 .filetype3 etc...
