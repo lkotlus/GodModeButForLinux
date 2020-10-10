@@ -3,28 +3,55 @@
 #We actually about to do the admins!
 
 echo '*_____________________________________*'
-echo '     have you come back after          ' 
-echo '   editing the badUsers file? (y/n)    '
+echo '      Would you like correct the       ' 
+echo '      sudo and admin group?(y/n)       '
 echo '*_____________________________________*'
 
 read -p 'y/n: ' RESP
-if [ $RESP == 'y' ]
+if [ $RESP == 'n' ]
 then
-    #do stuff here
-    echo "Then let's do this thang"
+    echo "Bye!"
     exit 1
 else
     echo 'moving on'
 fi
 
-# sudo grep -n 'sudo' /etc/group > sudoers3.txt
-# sudo grep -n 'admin' /etc/group > sudoers2.txt
+#Putting the full line of the groups we are editing into a file
+grep sudo /etc/group > sudoers.txt
+grep admin /etc/group > admins.txt
 
-sudo sed -i 's/.*://g' sudoers2.txt
-sudo sed -i 's/PASS_MIN_DAYS.*/PASS_MIN_DAYS	7/g' sudoers3.txt
+#Making strings of just groupname:x:linenumber
+sudoGroup=$(awk -F: 'BEGIN{OFS=":";} {print $1,$2,$3;}' sudoers.txt)
+adminGroup=$(awk -F: 'BEGIN{OFS=":";} {print $1,$2,$3;}' admins.txt)
 
-comm -1 -2 sudoers3.txt sudoers2.txt > sudoers.txt
-comm -2 -3 sudoers3.txt sudoers2.txt >> sudoers.txt
-comm -1 -3 sudoers3.txt sudoers2.txt >> sudoers.txt
+#echo ${sudoGroup}
+#echo ${adminGroup}
 
-cat sudoers.txt
+#Making an array of the opperators of our script (./admins.sh lkotlus rkotlus skotlus)
+arguments=("$@")
+
+for i in ${arguments[@]}
+do
+    id ${i} > uid.txt
+done
+
+if grep -q 'no such user' uid.txt
+then
+    cat uid.txt
+    exit 1
+fi
+
+for i in ${arguments[@]}
+do 
+    if [ ${i} == ${arguments[0]} ]
+    then
+    sudoGroup="${sudoGroup}:${i},"
+    elif [ ${i} == ${arguments[-1]} ]
+    then
+    sudoGroup="${sudoGroup}${i}"
+    else
+    sudoGroup="${sudoGroup}${i},"
+    fi
+done
+
+echo ${sudoGroup}
