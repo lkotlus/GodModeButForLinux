@@ -77,11 +77,11 @@ then
 
     for i in ${arguments[@]}
     do 
-        if [[ ${i} == ${arguments[0]} && ${#arguments[@]} > 1 ]]
+        if [[ ${i} == ${arguments[0]} && ${#arguments[@]} > 0 ]]
         then
             sudoGroup="${sudoGroup}:${i},"
             adminGroup="${adminGroup}:${i},"
-        elif [[ ${i} == ${arguments[0]} && ${#arguments[@]} == 1 ]]
+        elif [[ ${i} == ${arguments[0]} && ${#arguments[@]} == 0 ]]
         then
             sudoGroup="${sudoGroup}:${i}"
             adminGroup="${adminGroup}:${i}"
