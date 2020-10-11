@@ -3,7 +3,7 @@ sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/ma
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/deleteFiles.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passReq.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/admin.sh
-sudo touch adminsWhitelist.txt
+sudo touch adminWhitelist.txt
 sudo touch sudoers.txt
 sudo touch admins.txt
 sudo touch isUser.txt
