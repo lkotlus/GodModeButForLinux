@@ -96,7 +96,7 @@ then
     done
 
     sudo sed -i "s/sudo.*/${sudoGroup}/g" /etc/group
-    sudo sed -i "s/.*admin.*/${adminGroup}/g" /etc/group
+    sudo sed -i "s/admin.*/${adminGroup}/g" /etc/group
 
     echo "New sudo group: ${sudoGroup}"
     echo "New admin group: ${adminGroup}"
@@ -190,7 +190,7 @@ do
 done
 
 sudo sed -i "s/sudo.*/${sudoGroup}/g" /etc/group
-sudo sed -i "s/.*admin.*/${adminGroup}/g" /etc/group
+sudo sed -i "s/admin.*/${adminGroup}/g" /etc/group
 
 echo "New sudo group: ${sudoGroup}"
 echo "New admin group: ${adminGroup}"
