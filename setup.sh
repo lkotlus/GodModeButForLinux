@@ -4,11 +4,14 @@ sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/ma
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/deleteFiles.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passReq.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/admin.sh
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/services.sh
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/servicesWhitelist.txt
 
 sudo chmod +x EXTERMINATE.sh
 sudo chmod +x deleteFiles.sh
 sudo chmod +x passReq.sh
 sudo chmod +x admin.sh
+sudo chmod +x services.sh
 
 sudo touch adminWhitelist.txt
 sudo touch sudoers.txt
@@ -20,6 +23,10 @@ sudo touch goodUsers.txt
 sudo touch goodUsers2.txt
 sudo touch badUsers.txt
 sudo touch foundFiles.txt
+sudo touch services.txt
+sudo touch services2.txt
+sudo touch servicesWhitelist2.txt
+sudo touch badServices.txt
 
 echo "
         _____           _  ___  ___          _               
