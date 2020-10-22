@@ -7,6 +7,12 @@ sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/ma
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/services.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/servicesWhitelist.txt
 
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/EXTERMINATEreadme.md
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/deleteFilesreadme.md
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passReqreadme.md
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/adminreadme.md
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/servicesreadme.md
+
 sudo chmod +x EXTERMINATE.sh
 sudo chmod +x deleteFiles.sh
 sudo chmod +x passReq.sh
