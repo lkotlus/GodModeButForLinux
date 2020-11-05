@@ -38,6 +38,7 @@ sudo chmod +x deleteFiles.sh
 sudo chmod +x passReq.sh
 sudo chmod +x admin.sh
 sudo chmod +x services.sh
+sudo chmod +x packages.sh
 
 #
 ## making the necessary files to pass around information, read information from, and write information to.
