@@ -36,7 +36,7 @@ then
 
 	#Going through the file and replacing our pattern with what we want.
 
-	echo 'Setting maximum days you can keep a password. (/etc/login.defs'
+	echo 'Setting maximum days you can keep a password. (/etc/login.defs)'
 	sudo sed -i 's/PASS_MAX_DAYS.*/PASS_MAX_DAYS	90/g' /etc/login.defs
 else
 	echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*'
