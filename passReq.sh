@@ -36,7 +36,7 @@ then
 
 	#Going through the file and replacing our pattern with what we want.
 
-	echo 'Setting maximum days you can keep a password. (/etc/login.defs)'
+	echo 'Setting maximum days you can keep a password. (/etc/login.defs'
 	sudo sed -i 's/PASS_MAX_DAYS.*/PASS_MAX_DAYS	90/g' /etc/login.defs
 else
 	echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*'
@@ -82,16 +82,19 @@ else
         echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-'
 fi
 
-if grep -q pam_tally2.so /etc/pam.d/common-auth
-then
-	echo 'Saving a copy of your /etc/pam.d/common-auth file'
-	sudo cp /etc/pam.d/common-auth /etc/pam.d/pam.d.bac
+# we are doing the /etc/pam.d/common-auth file is a bit different, so we want to do it in a different way. We are going to be overwriting the entire file.
 
-	echo 'Setting the account lockout policy (/etc/pam.d/common-auth)'
-	sudo sed -i 's/#.*pam_tally2.so/keyword removed/g' /etc/pam.d/common-auth
-	sudo sed -i 's/.*pam_tally2.so.*/auth required pam_tally2.so deny=5 unlock_time=1800/g' /etc/pam.d/common-auth
+echo 'Saving a copy of your /etc/pam.d/common-auth file'
+sudo cp /etc/pam.d/common-auth /etc/pam.d/pam.d.bac
+
+echo 'Setting the account lockout policy (/etc/pam.d/common-auth)'
+echo -e 'auth    [success=1 default=ignore]      pam_unix.so nullok_secure\nauth    required                        pam_deny.so\nauth    required    pam_tally2.so    onerr=fail deny=3 unlock_time=1800\nauth    required                        pam_permit.so' | sudo tee /etc/pam.d/common-auth > /dev/null
+
+if [ $?==0 ]
+then
+	echo 'All done :)'
 else
-	echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-'
-        echo 'Check the /etc/pam.d/common-auth for pam_tally2.so, it appears to be missing.'
-        echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-'
+	echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*'
+        echo 'Something went wrong while trying to edit the /etc/pam.d/common-auth file. Please investigate.'
+        echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*'
 fi
