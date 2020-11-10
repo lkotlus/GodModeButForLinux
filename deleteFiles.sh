@@ -118,7 +118,8 @@ if [ $RESP == 'y' ]
 then
 	echo "Then let's get to deleting."
 else
-	echo 'Then go eddit the foundFiles.txt file.'
+	echo 'Then go edit the foundFiles.txt file.'
+	exit 1
 fi
 
 echo 
