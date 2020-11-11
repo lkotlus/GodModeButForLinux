@@ -7,7 +7,6 @@ Keep in mind that you can only have 9 operators, if you have more than 9 operato
   user2
   
   user3
-  
   etc...
 
 And then run like this: './admin.sh -f'
