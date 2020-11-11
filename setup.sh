@@ -29,7 +29,7 @@ sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/ma
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/adminreadme.md
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/servicesreadme.md
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/packagesreadme.md
-https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passwordsreadme.md
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passwordsreadme.md
 
 #
 ## giving executable permissions to the scripts
