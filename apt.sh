@@ -16,5 +16,6 @@ echo
 # Overwriting the current /etc/apt with our pre-configured /etc/apt (located on the github)
 rsync -a --delete preConfigApt/ /etc/apt/ > /dev/null
 
-# Upgrading
+# Upgrading and updating
 sudo apt-get upgrade -y
+sudo apt-get update -y
