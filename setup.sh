@@ -1,39 +1,6 @@
 #!/bin/bash
 
 #
-## downloading the scripts
-#
-
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/EXTERMINATE.sh
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/deleteFiles.sh
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passReq.sh
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/admin.sh
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/services.sh
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/packages.sh
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passwords.sh
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/apt.sh
-
-#
-## downloading the whitelists/blacklists
-#
-
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/servicesWhitelist.txt
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/packageBlacklist.txt
-
-#
-## downloading the readmes
-#
-
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/EXTERMINATEreadme.md
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/deleteFilesreadme.md
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passReqreadme.md
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/adminreadme.md
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/servicesreadme.md
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/packagesreadme.md
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passwordsreadme.md
-sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/aptreadme.md
-
-#
 ## giving executable permissions to the scripts
 #
 
