@@ -11,6 +11,7 @@ sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/ma
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/services.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/packages.sh
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passwords.sh
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/apt.sh
 
 #
 ## downloading the whitelists/blacklists
@@ -30,6 +31,7 @@ sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/ma
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/servicesreadme.md
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/packagesreadme.md
 sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/passwordsreadme.md
+sudo wget https://raw.githubusercontent.com/hufflegamer123/GodModeButForLinux/master/aptreadme.md
 
 #
 ## giving executable permissions to the scripts
@@ -42,6 +44,7 @@ sudo chmod +x admin.sh
 sudo chmod +x services.sh
 sudo chmod +x packages.sh
 sudo chmod +x passwords.sh
+sudo chmod +x apt.sh
 
 #
 ## making the necessary files to pass around information, read information from, and write information to.
@@ -61,6 +64,8 @@ sudo touch services.txt
 sudo touch services2.txt
 sudo touch servicesWhitelist2.txt
 sudo touch badServices.txt
+sudo touch sourcelist.txt
+sudo touch sources.txt
 
 #
 ## making a fancy littl ascii art
