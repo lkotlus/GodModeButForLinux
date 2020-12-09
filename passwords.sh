@@ -19,7 +19,7 @@ echo "It is recomended that you run the EXTERMINATE script before this, with thi
 sed -i '/^$/d' users.txt
 sed -i '/^$/d' users2.txt
 
-for i in {1000..1050}
+for i in {1000..2000}
 do 
     if [ ${i} == 1000 ]
     then
