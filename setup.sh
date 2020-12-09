@@ -13,6 +13,7 @@ sudo chmod +x packages.sh
 sudo chmod +x passwords.sh
 sudo chmod +x apt.sh
 sudo chmod +x missingUsers.sh
+sudo chmod +x root.txt
 
 #
 ## making the necessary files to pass around information, read information from, and write information to.
@@ -35,6 +36,8 @@ sudo touch badServices.txt
 sudo touch sourcelist.txt
 sudo touch sources.txt
 sudo touch missingUsers.txt
+sudo touch uid.txt
+sudo touch uid2.txt
 
 #
 ## making a fancy littl ascii art
