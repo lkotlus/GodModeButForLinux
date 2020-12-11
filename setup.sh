@@ -13,7 +13,7 @@ sudo chmod +x packages.sh
 sudo chmod +x passwords.sh
 sudo chmod +x apt.sh
 sudo chmod +x missingUsers.sh
-sudo chmod +x root.sh
+# sudo chmod +x root.sh
 
 #
 ## making the necessary files to pass around information, read information from, and write information to.
