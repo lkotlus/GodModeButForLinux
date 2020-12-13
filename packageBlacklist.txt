@@ -106,6 +106,7 @@ hash-identifier
 hexinject
 hexorbase
 hostadp-wpe
+hydra
 hping3
 httptunnel
 hurl
