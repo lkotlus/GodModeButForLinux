@@ -58,11 +58,10 @@ echo 'Would you like to delete mp3 files? (y/n)'
 read -p 'y/n: ' RESP
 if [ $RESP == 'y' ]
 then
-then
 	echo
 	echo 'Searching for files'
-    find / -iname '*.mp3' > foundFiles.txt
-    echo 'Found files'
+        find / -iname '*.mp3' > foundFiles.txt
+        echo 'Found files'
 else
 	echo 'Moving on'
 fi
