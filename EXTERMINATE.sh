@@ -12,13 +12,13 @@ then
     echo
     echo "Then let's get to EXTERMINATING"
 
-    sudo sort users.txt > users2.txt
-    sudo sort goodUsers.txt > goodUsers2.txt
+    sort users.txt > users2.txt
+    sort goodUsers.txt > goodUsers2.txt
 
     cat users2.txt > users.txt
     cat goodUsers2.txt > goodUsers.txt
 
-    sudo comm -2 -3 --nocheck-order users.txt goodUsers.txt > badUsers.txt
+    comm -2 -3 --nocheck-order users.txt goodUsers.txt > badUsers.txt
     echo
 
     IFS=$'\n' read -d '' -r -a badUsers < badUsers.txt
@@ -26,7 +26,7 @@ then
     for i in ${badUsers[@]}
     do
         echo EXTERMINATING user: $i
-        sudo deluser --quiet $i
+        deluser --quiet $i
     done
     
     echo
@@ -45,13 +45,13 @@ then
     then
             #Saving a copy of the file we are edditing
             echo 'Saving a copy of your /etc/ssh/sshd_config file'
-            sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bac
+            cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bac
 
             #Turning root off
 
             echo 'EXTERMINATING root'
-            sudo sed -i 's/PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
-        sudo sed -i 's/#PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
+            sed -i 's/PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
+            sed -i 's/#PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
     else
 
         #Giving an error message.
@@ -75,8 +75,8 @@ then
     if grep -q '# allow-guest' /etc/lightdm/lightdm.conf
     then
         echo 'EXTERMINATING guest'
-        sudo sed -i 's/# allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
-        sudo sed -i 's/allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
+        sed -i 's/# allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
+        sed -i 's/allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
     else
         echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-'
             echo 'Check the /etc/lightdm/lighdm.conf for allow-guest, it appears to be missing.'
@@ -117,7 +117,7 @@ sed -i '/^$/d' users2.txt
 #Looping through 50 possible uids for users. This will work most of the time. Take care when looking at the badUsers file.
 for i in {1000..2000}
 do 
-    sudo grep -n $i /etc/passwd >> users.txt
+    grep -n $i /etc/passwd >> users.txt
 done
 
 sed -i '/^$/d' users.txt
@@ -143,7 +143,7 @@ sed -i '/^$/d' users2.txt
 #Looping through 50 possible uids for users. This will work most of the time. Take care when looking at the badUsers file.
 for i in {1000..1050}
 do 
-    sudo grep -n $i /etc/passwd >> users.txt
+    grep -n $i /etc/passwd >> users.txt
 done
 
 sed -i '/^$/d' users.txt
@@ -156,13 +156,13 @@ sed -i '/^$/d' users.txt
 sed -i '/^$/d' users2.txt
 
 #Comparing users.txt to goodUsers.txt and sorting both files (sorting the files is required to use comm)
-sudo sort users.txt > users2.txt
-sudo sort goodUsers.txt > goodUsers2.txt
+sort users.txt > users2.txt
+sort goodUsers.txt > goodUsers2.txt
 
 cat users2.txt > users.txt
 cat goodUsers2.txt > goodUsers.txt
 
-sudo comm -2 -3 --nocheck-order users.txt goodUsers.txt > badUsers.txt
+comm -2 -3 --nocheck-order users.txt goodUsers.txt > badUsers.txt
 echo 
 
 #Making a badUsers array out of badUsers.txt
@@ -189,7 +189,7 @@ fi
 for i in ${badUsers[@]}
 do
         echo EXTERMINATING user: $i
-        sudo deluser --quiet $i
+        deluser --quiet $i
 done
 
 echo
@@ -207,13 +207,13 @@ if grep -q PermitRootLogin /etc/ssh/sshd_config
 then
         #Saving a copy of the file we are edditing
         echo 'Saving a copy of your /etc/ssh/sshd_config file'
-        sudo cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bac
+        cp /etc/ssh/sshd_config /etc/ssh/sshd_config.bac
 
         #Turning root off
 
         echo 'EXTERMINATING root'
-        sudo sed -i 's/PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
-	sudo sed -i 's/#PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
+        sed -i 's/PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
+	sed -i 's/#PermitRootLogin.*/PermitRootLogin no/g' /etc/ssh/sshd_config
 else
 
 	#Giving an error message.
@@ -237,8 +237,8 @@ fi
 if grep -q '# allow-guest' /etc/lightdm/lightdm.conf
 then
 	echo 'EXTERMINATING guest'
-	sudo sed -i 's/# allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
-	sudo sed -i 's/allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
+	sed -i 's/# allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
+	sed -i 's/allow-guest.*/allow-guest=false/g' /etc/lightdm/lightdm.conf
 else
 	echo '*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-**-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-'
         echo 'Check the /etc/lightdm/lighdm.conf for allow-guest, it appears to be missing.'
