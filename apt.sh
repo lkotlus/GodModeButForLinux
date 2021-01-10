@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Updating
-sudo apt-get update -y
+apt-get update -y
 echo
 
 # Showing the current package list, and notifying them of what there is and how to update it.
@@ -17,5 +17,5 @@ echo
 rsync -a --delete preConfigApt/ /etc/apt/ > /dev/null
 
 # Upgrading and updating
-sudo apt-get upgrade -y
-sudo apt-get update -y
+apt-get update -y
+apt-get upgrade -y
