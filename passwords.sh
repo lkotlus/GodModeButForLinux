@@ -23,9 +23,9 @@ for i in {1000..2000}
 do 
     if [ ${i} == 1000 ]
     then
-        sudo grep -n $i /etc/passwd > users.txt
+        grep -n $i /etc/passwd > users.txt
     else
-        sudo grep -n $i /etc/passwd >> users.txt
+        grep -n $i /etc/passwd >> users.txt
     fi
 done
 
@@ -44,7 +44,7 @@ if [ $# == 1 ]
 then
     for i in ${users[@]}
     do
-        echo -e "$1\n$1" | sudo passwd ${i} &> /dev/null
+        echo -e "$1\n$1" | passwd ${i} &> /dev/null
         if [ $? != 0 ]
         then
             echo -e "Something went wrong when trying to change the password for ${i}"
