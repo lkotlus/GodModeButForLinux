@@ -60,3 +60,7 @@
  [ + ]  vmware-tools-thinprint
  [ + ]  whoopsie
  [ - ]  x11-common
+ [ - ]  console-setup.sh
+ [ - ]  hddtemp
+ [ - ]  keyboard-setup.sh
+ [ - ]  lm-sensors
