@@ -4,40 +4,40 @@
 ## giving executable permissions to the scripts
 #
 
-sudo chmod +x EXTERMINATE.sh
-sudo chmod +x deleteFiles.sh
-sudo chmod +x passReq.sh
-sudo chmod +x admin.sh
-sudo chmod +x services.sh
-sudo chmod +x packages.sh
-sudo chmod +x passwords.sh
-sudo chmod +x apt.sh
-sudo chmod +x missingUsers.sh
+chmod +x EXTERMINATE.sh
+chmod +x deleteFiles.sh
+chmod +x passReq.sh
+chmod +x admin.sh
+chmod +x services.sh
+chmod +x packages.sh
+chmod +x passwords.sh
+chmod +x apt.sh
+chmod +x missingUsers.sh
 # sudo chmod +x root.sh
 
 #
 ## making the necessary files to pass around information, read information from, and write information to.
 #
 
-sudo touch adminWhitelist.txt
-sudo touch sudoers.txt
-sudo touch admins.txt
-sudo touch isUser.txt
-sudo touch users.txt
-sudo touch users2.txt
-sudo touch goodUsers.txt
-sudo touch goodUsers2.txt
-sudo touch badUsers.txt
-sudo touch foundFiles.txt
-sudo touch services.txt
-sudo touch services2.txt
-sudo touch servicesWhitelist2.txt
-sudo touch badServices.txt
-sudo touch sourcelist.txt
-sudo touch sources.txt
-sudo touch missingUsers.txt
-sudo touch uid.txt
-sudo touch uid2.txt
+touch adminWhitelist.txt
+touch sudoers.txt
+touch admins.txt
+touch isUser.txt
+touch users.txt
+touch users2.txt
+touch goodUsers.txt
+touch goodUsers2.txt
+touch badUsers.txt
+touch foundFiles.txt
+touch services.txt
+touch services2.txt
+touch servicesWhitelist2.txt
+touch badServices.txt
+touch sourcelist.txt
+touch sources.txt
+touch missingUsers.txt
+touch uid.txt
+touch uid2.txt
 
 #
 ## making a fancy littl ascii art
