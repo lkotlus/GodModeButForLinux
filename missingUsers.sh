@@ -20,7 +20,7 @@ sed -i '/^$/d' users2.txt
 #Looping through 50 possible uids for users. This will work most of the time. Take care when looking at the badUsers file.
 for i in {1000..2000}
 do 
-    sudo grep -n $i /etc/passwd >> users.txt
+    grep -n $i /etc/passwd >> users.txt
 done
 
 sed -i '/^$/d' users.txt
@@ -46,7 +46,7 @@ sed -i '/^$/d' users2.txt
 #Looping through 50 possible uids for users. This will work most of the time. Take care when looking at the badUsers file.
 for i in {1000..1050}
 do 
-    sudo grep -n $i /etc/passwd >> users.txt
+    grep -n $i /etc/passwd >> users.txt
 done
 
 sed -i '/^$/d' users.txt
@@ -59,13 +59,13 @@ sed -i '/^$/d' users.txt
 sed -i '/^$/d' users2.txt
 
 #Comparing users.txt to goodUsers.txt and sorting both files (sorting the files is required to use comm)
-sudo sort users.txt > users2.txt
-sudo sort goodUsers.txt > goodUsers2.txt
+sort users.txt > users2.txt
+sort goodUsers.txt > goodUsers2.txt
 
 cat users2.txt > users.txt
 cat goodUsers2.txt > goodUsers.txt
 
-sudo comm -1 -3 --nocheck-order users.txt goodUsers.txt > missingUsers.txt
+comm -1 -3 --nocheck-order users.txt goodUsers.txt > missingUsers.txt
 echo 
 
 #Making a badUsers array out of badUsers.txt
@@ -91,7 +91,7 @@ fi
 for i in ${missingUsers[@]}
 do
     echo "adding the user $i"
-    sudo useradd $i > /dev/null
+    useradd $i > /dev/null
     echo
 done
 
