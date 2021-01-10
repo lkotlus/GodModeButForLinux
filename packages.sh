@@ -37,7 +37,7 @@ done
 
 for i in ${badPackages[@]}
 do
-    sudo apt-get remove ${i} -y &> /dev/null
+    apt-get remove ${i} -y &> /dev/null
     if [ $? == 0 ]
     then
         echo "Removed package ${i}!"
