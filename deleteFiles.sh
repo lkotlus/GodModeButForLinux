@@ -24,7 +24,7 @@ then
 	for i in "${lines[@]}"
 	do
 		echo "Deleting file ${i}"
-		sudo rm "${i}"
+		rm "${i}"
 	done
 
 	exit 1
@@ -58,9 +58,10 @@ echo 'Would you like to delete mp3 files? (y/n)'
 read -p 'y/n: ' RESP
 if [ $RESP == 'y' ]
 then
+then
 	echo
 	echo 'Searching for files'
-    sudo find / -iname '*.mp3' > foundFiles.txt
+    find / -iname '*.mp3' > foundFiles.txt
     echo 'Found files'
 else
 	echo 'Moving on'
@@ -74,7 +75,7 @@ if [ $RESP == 'y' ]
 then
 	echo
 	echo 'Searching for files'
-    sudo find / -iname '*.mp4' >> foundFiles.txt
+    find / -iname '*.mp4' >> foundFiles.txt
     echo 'Found files'
 else
 	echo 'Moving on'
@@ -88,8 +89,8 @@ if [ $RESP == 'y' ]
 then
 	echo
 	echo 'Searching for files'
-    sudo find / -iname 'passwords.txt' >> foundFiles.txt
-    sudo find / -iname 'password.txt' >> foundFiles.txt
+    find / -iname 'passwords.txt' >> foundFiles.txt
+    find / -iname 'password.txt' >> foundFiles.txt
     echo 'Found files'
 else
 	echo 'Moving on'
@@ -129,5 +130,5 @@ IFS=$'\n' read -d '' -r -a lines < foundFiles.txt
 for i in "${lines[@]}"
 do
 	echo "Deleting file ${i}"
-	sudo rm "${i}"
+	rm "${i}"
 done
