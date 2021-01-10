@@ -88,7 +88,7 @@ echo 'Saving a copy of your /etc/pam.d/common-auth file'
 cp /etc/pam.d/common-auth /etc/pam.d/pam.d.bac
 
 echo 'Setting the account lockout policy (/etc/pam.d/common-auth)'
-echo -e 'auth    [success=1 default=ignore]      pam_unix.so nullok_secure\nauth    required                        pam_deny.so\nauth    required    pam_tally2.so    onerr=fail deny=3 unlock_time=1800\nauth    required                        pam_permit.so' | sudo tee /etc/pam.d/common-auth > /dev/null
+echo -e 'auth    [success=1 default=ignore]      pam_unix.so nullok_secure\nauth    required                        pam_deny.so\nauth    required    pam_tally2.so    onerr=fail deny=3 unlock_time=1800\nauth    required                        pam_permit.so' | tee /etc/pam.d/common-auth > /dev/null
 
 if [ $?==0 ]
 then
