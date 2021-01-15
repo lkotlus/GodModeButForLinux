@@ -13,8 +13,7 @@ chmod +x packages.sh
 chmod +x passwords.sh
 chmod +x apt.sh
 chmod +x missingUsers.sh
-# sudo chmod +x root.sh
-
+chmod +x cron.sh
 #
 ## making the necessary files to pass around information, read information from, and write information to.
 #
@@ -38,6 +37,8 @@ touch sources.txt
 touch missingUsers.txt
 touch uid.txt
 touch uid2.txt
+touch crontabs.txt
+touch cronjobs.txt
 
 #
 ## making a fancy littl ascii art
