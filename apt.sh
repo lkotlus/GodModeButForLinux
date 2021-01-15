@@ -14,7 +14,17 @@ echo "These are the packages currently being updated through apt. If you want to
 echo
 
 # Overwriting the current /etc/apt with our pre-configured /etc/apt (located on the github)
-rsync -a --delete preConfigApt/ /etc/apt/ > /dev/null
+
+echo
+echo "Are you running Debian or Ubuntu?"
+
+read -p '1 for Debian, 0 for Ubuntu: ' RESP
+if [ $RESP == '0' ]
+then
+    rsync -a --delete preConfigApt/ /etc/apt/ > /dev/null
+else
+    rsync -a --delete apt/ /etc/apt/ > /dev/null
+fi
 
 # Upgrading and updating
 apt-get update -y
