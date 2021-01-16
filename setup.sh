@@ -39,6 +39,7 @@ touch uid.txt
 touch uid2.txt
 touch crontabs.txt
 touch cronjobs.txt
+mkdir rawCronJobs
 
 #
 ## making a fancy littl ascii art
