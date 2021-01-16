@@ -15,7 +15,7 @@ chmod +x apt.sh
 chmod +x missingUsers.sh
 chmod +x cron.sh
 #
-## making the necessary files to pass around information, read information from, and write information to.
+## making the necessary files and directories to pass around information, read information from, and write information to.
 #
 
 touch adminWhitelist.txt
@@ -40,6 +40,12 @@ touch uid2.txt
 touch crontabs.txt
 touch cronjobs.txt
 mkdir rawCronJobs
+
+#
+## installing necessary tools
+#
+
+apt-get install net-tools -y > /dev/null
 
 #
 ## making a fancy littl ascii art
