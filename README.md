@@ -1,5 +1,5 @@
 # URGENT: This repo has been deprecated.
-The new and improved repo can be found here: https://github.com/hufflegamer123/GMFL_Improved
+The new and improved repo can be found here: https://github.com/lkotlus/PatriotWare
 
 
 # GodModeButForLinux
